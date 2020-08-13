@@ -1,0 +1,9 @@
+// For configuration documentation see http://romefrontend.dev/#project-configuration
+name: "rome"
+root: false
+lint: {
+    ignore: [
+        "node_modules/**"
+        "rome.rjson"
+    ]
+}

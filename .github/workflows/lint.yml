@@ -1,0 +1,22 @@
+on: [push]
+
+jobs:
+  rome-frontend-check:
+    name: Rome frontend check
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Install node v12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Run Rome check
+        id: check
+        uses: romainnorberg/rome-frontend-check-action@master
+        with:
+          version: 10.0.3-beta # optional
+          check-flags: '--verbose-diagnostics' # optional
